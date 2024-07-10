@@ -7,12 +7,17 @@ function generateRandomNumbers(max){
 function generateBombsList(nums, NUM_OF_BOMBS) {
     //devo restituire un array
     let bombList = [];
+
+   
     for(let i=0; i<NUM_OF_BOMBS; i++) {
+         //variabile di controllo per terminare ciclo while interno
+        let check_num = false;
+        
         //verifico se il num generato randomicamente è presente in lista
         //se è presente non faccio nulla
         //altrimenti lo inserisco nell'array
         //quando l'array raggiunge i 16 elementi mi fermo
-        while(condizione){
+        while(check_num === false){
             //genero num random
             let num = generateRandomNumbers(nums);
 
@@ -20,6 +25,7 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
             if(bombList.includes(num) === false) {
                 //se non è presente lo pusho all'interno 
                 bombList.push(num);
+                check_num = true;
             }
         }
     }
