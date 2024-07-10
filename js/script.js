@@ -1,3 +1,8 @@
+//funzione che genera i num (le bombe) casuali
+function generateRandomNumbers(max){
+    return Math.floor(Math.random() * max + 1);
+}
+
 //funzione crea casella della griglia
 function createSingleSquare(num){
     //creo quadrato come div
