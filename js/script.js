@@ -7,7 +7,7 @@ function generateRandomNumbers(max){
 function generateBombsList(nums, NUM_OF_BOMBS) {
     //devo restituire un array
     let bombList = [];
-
+    console.log(bombList);
    
     //for(let i=0; i<NUM_OF_BOMBS; i++) {
          //variabile di controllo per terminare ciclo while intern
@@ -47,9 +47,9 @@ function createSingleSquare(num, sideNumber){
     square.innerText = num + 1;
 
     //aggiungo l'evento click al quadrato
-    square.addEventListener('click', function(){
+    square.addEventListener('click', function() {
 
-        //mostro in console il num della casella cliccata
+        //aggiungo la classe clicked alla casella cliccata
         this.classList.add('clicked');
 
         //mostro in console il num della casella cliccata
