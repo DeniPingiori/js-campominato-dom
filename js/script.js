@@ -60,10 +60,8 @@ function createSingleSquare(num, sideNumber){
     return square;
 }
 
-
-
 //definisco funzione che mi genera griglia. all'interno mi crea singoli quadrati
-function generateGrid(cellsNumber, sideNumber) {
+function generateGrid(cellsNumber, sideNumber, bombs) {
 
     //recupero elem che dovrà contenere la griglia dal dom
     const grid = document.getElementById('grid');
@@ -71,7 +69,7 @@ function generateGrid(cellsNumber, sideNumber) {
     //ciclo x creare le 100 caselle
     for(let i = 0; i<cellsNumber; i++ ) {
         //chiamo la funzione x creare le caselle passandole come indice attuale x scriverci dentro
-        let item = createSingleSquare(i, sideNumber);
+        let item = createSingleSquare(i, sideNumber, bombs);
 
         //appendo la griglia
         grid.append(item);
