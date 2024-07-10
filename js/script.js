@@ -62,20 +62,21 @@ function createSingleSquare(num, sideNumber){
 
 
 
-
+//definisco funzione che mi genera griglia. all'interno mi crea singoli quadrati
+function generateGrid(cellsNumber, sideNumber) {
 
     //recupero elem che dovrà contenere la griglia dal dom
     const grid = document.getElementById('grid');
 
     //ciclo x creare le 100 caselle
-    for(let i = 0; i<100; i++ ) {
+    for(let i = 0; i<cellsNumber; i++ ) {
         //chiamo la funzione x creare le caselle passandole come indice attuale x scriverci dentro
-        let item = createSingleSquare(i)
+        let item = createSingleSquare(i, sideNumber);
 
         //appendo la griglia
         grid.append(item);
     }
-
+}
 
 //funzione che genera nuova partita 
 function createNewGame(){
