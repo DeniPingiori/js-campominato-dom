@@ -9,15 +9,15 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
     let bombList = [];
 
    
-    for(let i=0; i<NUM_OF_BOMBS; i++) {
+    //for(let i=0; i<NUM_OF_BOMBS; i++) {
          //variabile di controllo per terminare ciclo while interno
         let check_num = false;
-        
+
         //verifico se il num generato randomicamente è presente in lista
         //se è presente non faccio nulla
         //altrimenti lo inserisco nell'array
         //quando l'array raggiunge i 16 elementi mi fermo
-        while(check_num === false){
+        while(bombList.length < NUM_OF_BOMBS){
             //genero num random
             let num = generateRandomNumbers(nums);
 
@@ -28,8 +28,9 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
                 check_num = true;
             }
         }
+        return bombList;
     }
-}
+//}
 
 //funzione crea casella della griglia
 function createSingleSquare(num){
