@@ -35,6 +35,9 @@ button.addEventListener('click', function(){
     //svuoto la griglia da tutti i suoi elementi interni
     grid.innerHTML = ' ';
 
+    //FUNZIONE CHE GENERA CASELLE
+    generateGrid(100,10)
+
     //ciclo x creare le 100 caselle
     for(let i = 0; i<100; i++ ) {
         //chiamo la funzione x creare le caselle passandole come indice attuale x scriverci dentro

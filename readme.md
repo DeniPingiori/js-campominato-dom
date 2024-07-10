@@ -22,3 +22,17 @@ Ad esempio:
 Di cosa ho bisogno per generare i numeri?
 Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 Le validazioni e i controlli possiamo farli anche in un secondo momento.
+
+
+SCOMPOSIZIONE ES partendo dall'es base 
+
+GENERAZIONE BOMBE
+1. generare 16 num casuali da 1 a 100
+
+GENERAZIONE DEL CLICK SULLA CASELLA
+1. al click sulla casella controllo se il num cliccato è presente nell'array delle bombe
+2. ? se il num si trova nell'array delle bombe => partita finita
+3. : altrimenti la casella si colora di azzurro e posso cliccare altre caselle
+4. ? se l'utente clicca su tutte le caselle "buone" la partita finisce
+5. : altrimenti la partita continua
+
