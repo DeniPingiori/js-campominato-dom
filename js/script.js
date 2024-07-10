@@ -5,7 +5,24 @@ function generateRandomNumbers(max){
 
 //funzione che mi genera array bombe, creiamo e restituiamo un array
 function generateBombsList(nums, NUM_OF_BOMBS) {
+    //devo restituire un array
+    let bombList = [];
+    for(let i=0; i<NUM_OF_BOMBS; i++) {
+        //verifico se il num generato randomicamente è presente in lista
+        //se è presente non faccio nulla
+        //altrimenti lo inserisco nell'array
+        //quando l'array raggiunge i 16 elementi mi fermo
+        while(condizione){
+            //genero num random
+            let num = generateRandomNumbers(nums);
 
+            //controllo se il num è presente nell'array delle bombe
+            if(bombList.includes(num) === false) {
+                //se non è presente lo pusho all'interno 
+                bombList.push(num);
+            }
+        }
+    }
 }
 
 //funzione crea casella della griglia
@@ -27,6 +44,7 @@ function createSingleSquare(num){
     //aggiungo l'evento click al quadrato
     square.addEventListener('click', function(){
 
+        //mostro in console il num della casella cliccata
         this.classList.add('clicked');
 
         //mostro in console il num della casella cliccata
