@@ -10,8 +10,7 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
 
    
     //for(let i=0; i<NUM_OF_BOMBS; i++) {
-         //variabile di controllo per terminare ciclo while interno
-        let check_num = false;
+         //variabile di controllo per terminare ciclo while intern
 
         //verifico se il num generato randomicamente è presente in lista
         //se è presente non faccio nulla
@@ -25,7 +24,6 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
             if(bombList.includes(num) === false) {
                 //se non è presente lo pusho all'interno 
                 bombList.push(num);
-                check_num = true;
             }
         }
         return bombList;
@@ -33,7 +31,7 @@ function generateBombsList(nums, NUM_OF_BOMBS) {
 //}
 
 //funzione crea casella della griglia
-function createSingleSquare(num){
+function createSingleSquare(num, sideNumber){
     //creo quadrato come div
     const square = document.createElement('div');
 
@@ -62,12 +60,9 @@ function createSingleSquare(num){
     return square;
 }
 
-//richiamo il pulsante dal DOM
-const button = document.getElementById('play');
 
-//evento click
-button.addEventListener('click', function(){
-    //console.log('cominciamo la partita');
+
+
 
     //recupero elem che dovrà contenere la griglia dal dom
     const grid = document.getElementById('grid');
@@ -80,7 +75,7 @@ button.addEventListener('click', function(){
         //appendo la griglia
         grid.append(item);
     }
-});
+
 
 //funzione che genera nuova partita 
 function createNewGame(){
@@ -98,8 +93,17 @@ function createNewGame(){
 
     //genero le bombe e le inserisco nell'array preposto al contenimento delle bombe
     const bombs = generateBombsList(100, NUM_OF_BOMBS);
-
+    console.log(bombs);
     //FUNZIONE CHE GENERA CASELLE
     generateGrid(100,10);
-
 }
+
+
+//richiamo il pulsante dal DOM
+const button = document.getElementById('play');
+
+//evento click
+button.addEventListener('click', function() {
+    //console.log('cominciamo la partita');
+    createNewGame();
+});
