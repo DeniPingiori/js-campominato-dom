@@ -3,6 +3,7 @@ function generateRandomNumbers(max){
     return Math.floor(Math.random() * max + 1);
 }
 
+
 //funzione crea casella della griglia
 function createSingleSquare(num){
     //creo quadrato come div
@@ -37,8 +38,7 @@ button.addEventListener('click', function(){
     //recupero elem che dovrà contenere la griglia dal dom
     const grid = document.getElementById('grid');
 
-    //svuoto la griglia da tutti i suoi elementi interni
-    grid.innerHTML = ' ';
+  
 
     //FUNZIONE CHE GENERA CASELLE
     generateGrid(100,10)
@@ -48,7 +48,21 @@ button.addEventListener('click', function(){
         //chiamo la funzione x creare le caselle passandole come indice attuale x scriverci dentro
         let item = createSingleSquare(i)
 
+        //appendo la griglia
         grid.append(item);
     }
 });
 
+//funzione che genera nuova partita 
+function createNewGame(){
+
+    //array che contiene le bombe
+    let bombs = [];
+    //variabile punteggio partita
+    let points = 0;
+    //variabile che stabilisce che la partita è finita
+    let gameOver = false;
+    
+     //svuoto la griglia da tutti i suoi elementi interni
+      grid.innerHTML = ' ';
+}
