@@ -1,6 +1,11 @@
+let bombs = [];
+let gameOver = false;
+
+
+
 //funzione che genera i num (le bombe) casuali
 function generateRandomNumbers(max){
-    return Math.floor(Math.random() * max + 1);
+    return Math.floor(Math.random() * max);
 }
 
 //funzione che mi genera array bombe, creiamo e restituiamo un array
@@ -48,12 +53,24 @@ function createSingleSquare(num, sideNumber){
 
     //aggiungo l'evento click al quadrato
     square.addEventListener('click', function() {
+       console.log(num);
 
-        //aggiungo la classe clicked alla casella cliccata
-        this.classList.add('clicked');
+       if (!gameOver) {
 
-        //mostro in console il num della casella cliccata
-        console.log(this.innerText); //parola chiave this per chiamare il pulsante
+        if(bombs.includes(num+1)) {
+            console.log('ho beccato la bomba');
+            // assegno  colore a casella
+
+            this.classList.add('bomb');
+
+            gameOver = true;
+
+        } else {
+            //aggiungo la classe clicked alla casella cliccata
+            this.classList.add('clicked');
+        }
+       }
+
     });
 
     //restituisco il quadrato
@@ -76,14 +93,14 @@ function generateGrid(cellsNumber, sideNumber, bombs) {
     }
 }
 
+
+
 //funzione che genera nuova partita 
 function createNewGame(){
 
-    
+    gameOver = false;
     //variabile punteggio partita
     let points = 0;
-    //variabile che stabilisce che la partita è finita
-    let gameOver = false;
     //definizione cost che mi indica il num di bombe dell'array
     const NUM_OF_BOMBS = 16; 
 
@@ -91,7 +108,7 @@ function createNewGame(){
       grid.innerHTML = ' ';
 
     //genero le bombe e le inserisco nell'array preposto al contenimento delle bombe
-    const bombs = generateBombsList(100, NUM_OF_BOMBS);
+    bombs = generateBombsList(100, NUM_OF_BOMBS);
     console.log(bombs);
     //FUNZIONE CHE GENERA CASELLE
     generateGrid(100,10);

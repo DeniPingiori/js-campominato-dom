@@ -69,3 +69,8 @@ main h2{
 .clicked {
     background-color: blue;
 }
+
+
+.bomb {
+    background-color: red;
+}
